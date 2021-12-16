@@ -1,0 +1,56 @@
+<odoo>
+    <record id="account_countdown_view" model="ir.ui.view">
+        <field name="name">Countdown</field>
+        <field name="model">product.countdown.config</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Products Countdown">
+                <group col="4">
+                    <field name="product"/>
+                    <field name="launch_date"/>
+                </group>
+
+                <group col="4">
+                    <field name="is_launched"/>
+                    <field name="active"/>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record id="account_countdown_list_view" model="ir.ui.view">
+        <field name="name">Countdown</field>
+        <field name="model">product.countdown.config</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Products countdown">
+                <field name="product"/>
+                <field name="launch_date"/>
+                <field name="is_launched"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_countdown_search" model="ir.ui.view">
+        <field name="name">product.countdown.config.search</field>
+        <field name="model">product.countdown.config</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="product"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_countdown_view" model="ir.actions.act_window">
+        <field name="name">Countdown</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.countdown.config</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_countdown_search"/>
+         <field name="view_id" ref="account_countdown_list_view"/>
+    </record>
+
+    <menuitem id="menu_website_config_custom" name="Product Release Config" sequence="0"
+              action="action_countdown_view"
+              parent="website.menu_website_global_configuration"/>
+
+</odoo>

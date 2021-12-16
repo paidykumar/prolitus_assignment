@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <template id="assets_frontendq" inherit_id="website.assets_frontend" name="Slides Frontend Assets">
+            <xpath expr="//link[last()]" position="after">
+                <link rel="stylesheet" type="text/scss" href="/website_countdown/static/src/css/styles.css" />
+            </xpath>
+         </template>
+
+        <template id="products_countdown" inherit_id="website_sale.product" customize_show="True"
+                  name="Products Countdown">
+            <xpath expr="//div[@class='col-md-6 col-xl-8']" position="before">
+                <div id="product_timer"/>
+                <script type="text/javascript" src="/website_countdown/static/src/js/countdown.js"></script>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

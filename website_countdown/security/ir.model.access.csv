@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+product.countdown.config_user_base_user,product.countdown.config,model_product_countdown_config,base.group_user,1,1,1,0
