@@ -18,7 +18,7 @@ class Countdown(models.Model):
     @api.constrains('launch_date')
     def validate_launch_date(self):
         today = fields.Date.today()
-        if self.launch_date < today:
+        if self.launch_date <= today:
             raise ValidationError("date should be more than todays date..")
 
     def write(self, vals):
