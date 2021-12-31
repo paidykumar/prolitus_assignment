@@ -23,7 +23,6 @@ var product = $('.product_template_id').val();
         };
 
         $.ajax(settings).done(function (sub_response) {
-
         var x = setInterval(function() {
         var launch_date = new Date(sub_response.result.response.launch_date).getTime();
 
