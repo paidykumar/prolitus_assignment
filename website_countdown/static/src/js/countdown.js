@@ -30,8 +30,9 @@ var product = $('.product_template_id').val();
         var launch = sub_response.result.response.is_launched
         var add_cart = document.getElementById("add_to_cart")
 
+        var offset = new Date().getTimezoneOffset();
         var now = new Date().getTime();
-        var distance = launch_date - now;
+        var distance = launch_date - now + (offset * 60 * 1000);
         var days = Math.floor(distance / (1000 * 60 * 60 * 24));
         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
